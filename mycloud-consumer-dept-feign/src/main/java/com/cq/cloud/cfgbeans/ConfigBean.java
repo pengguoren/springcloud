@@ -1,7 +1,6 @@
 package com.cq.cloud.cfgbeans;
 
 import com.netflix.loadbalancer.IRule;
-import com.netflix.loadbalancer.RandomRule;
 import com.netflix.loadbalancer.RoundRobinRule;
 import org.springframework.cloud.client.loadbalancer.LoadBalanced;
 import org.springframework.context.annotation.Bean;
@@ -19,9 +18,9 @@ public class ConfigBean //boot -->spring   applicationContext.xml --- @Configura
 	}
 
 	/**
-	 * 切换负载均衡算法
+     * 切换负载均衡算法
 	 * @return
-	 */
+     */
 	@Bean
 	public IRule myRule() {
 		return new RoundRobinRule();
