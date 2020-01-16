@@ -11,13 +11,27 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>mycloud-consumer-dept-80</artifactId>
-    <description>部门微服务消费者</description>
+    <description>部门微服务消费者-客户端</description>
 
     <dependencies>
         <dependency><!-- 自己定义的api -->
             <groupId>com.cq.cloud</groupId>
             <artifactId>mycloud-api</artifactId>
             <version>${project.version}</version>
+        </dependency>
+        <!--ribbon-->
+        <!-- Ribbon相关 -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-eureka</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-ribbon</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-config</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
