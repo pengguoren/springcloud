@@ -14,7 +14,8 @@ import java.util.List;
  * @data 2020/1/16 17:45
  */
 
-@FeignClient(value = "MYCLOUD-DEPT")
+//@FeignClient(value = "MYCLOUD-DEPT")
+@FeignClient(value = "MYCLOUD-DEPT",fallbackFactory = DeptClientServiceFallbackFactory.class)
 public interface DeptClientService {
     @RequestMapping(value = "/dept/add", method = RequestMethod.POST)
     public boolean add(@RequestBody Dept dept);
