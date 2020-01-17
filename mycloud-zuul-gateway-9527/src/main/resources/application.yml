@@ -1,0 +1,32 @@
+server: 
+  port: 9527
+ 
+spring: 
+  application:
+    name: mycloud-zuul-gateway
+ 
+eureka: 
+  client: 
+    service-url: 
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka  
+  instance:
+    instance-id: gateway-9527.com
+    prefer-ip-address: true 
+ 
+ 
+zuul:
+#  ignored-services: mycloud-dept
+#  prefix: /atguigu
+  ignored-services: "*"
+  routes:
+#    真实的名称
+    mydept.serviceId: mycloud-dept
+#    虚拟的名称
+    mydept.path: /mydept/**
+#
+info:
+  app.name: cq-microcloud
+  company.name: www.cq.com
+  build.artifactId: $project.artifactId$
+  build.version: $project.version$
+
